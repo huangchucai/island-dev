@@ -1,0 +1,36 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@types/node': ^18.15.11
+  cac: ^6.7.14
+  typescript: ^5.0.3
+
+dependencies:
+  cac: registry.npmmirror.com/cac/6.7.14
+
+devDependencies:
+  '@types/node': registry.npmmirror.com/@types/node/18.15.11
+  typescript: registry.npmmirror.com/typescript/5.0.3
+
+packages:
+
+  registry.npmmirror.com/@types/node/18.15.11:
+    resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.15.11.tgz}
+    name: '@types/node'
+    version: 18.15.11
+    dev: true
+
+  registry.npmmirror.com/cac/6.7.14:
+    resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cac/-/cac-6.7.14.tgz}
+    name: cac
+    version: 6.7.14
+    engines: {node: '>=8'}
+    dev: false
+
+  registry.npmmirror.com/typescript/5.0.3:
+    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typescript/-/typescript-5.0.3.tgz}
+    name: typescript
+    version: 5.0.3
+    engines: {node: '>=12.20'}
+    hasBin: true
+    dev: true
