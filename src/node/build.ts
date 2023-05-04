@@ -4,12 +4,16 @@
 import { build as viteBuild, InlineConfig } from 'vite'
 import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from './constans'
 import * as path from 'path'
-import * as fs from 'fs-extra'
+import fs from 'fs-extra'
 import type { RollupOutput } from 'rollup'
+import { pathToFileURL } from 'url';
+import ora from 'ora';
+let spinner = ora()
 
 export async function bundle(root: string) {
   try {
-    console.log('-hcc-Building client + server bundles...')
+    spinner.start('-hcc-Building client + server bundles...')
+
     const resolveViteConfig = (isServer: boolean): InlineConfig => {
       return {
         mode: 'production',
@@ -70,15 +74,16 @@ export async function renderPage(
   await fs.writeFile(path.join(root, 'build', 'index.html'), html)
   await fs.remove(path.join(root, '.temp'))
 }
+
 export async function build(root: string) {
   // 1. 代码打包 - 客户端 + 服务端
   const [clientBundle] = await bundle(root)
   // 2. 引入server-entry模块
-  debugger
   const serverEntryPath = path.join(root, '.temp/ssr-entry.js')
-  console.log('-hcc-root-',root)
+  // console.log('-hcc-root-', root, serverEntryPath)
   // 3. 服务端渲染, 产出html
-  const {render} = require(serverEntryPath)
-  console.log('-hcc-render-', render)
+  const { render } = await import(pathToFileURL(serverEntryPath).toString())
+  // console.log('-hcc-render-', render)
   await renderPage(render, root, clientBundle)
+  spinner.succeed('build successfully!');
 }
