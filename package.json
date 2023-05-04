@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsup --watch",
     "build": "tsup",
-    "preview": "cd build && server ."
+    "preview": "cd build && server .",
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx ./"
   },
   "bin": {
     "island": "bin/island.js"
@@ -19,6 +20,14 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8",
     "rollup": "^3.20.2",
     "tsup": "^6.7.0",
     "typescript": "^5.0.3"

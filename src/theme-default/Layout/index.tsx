@@ -1,18 +1,20 @@
-import React from 'react';
+import React from "react";
 
-
-export  function Layout() {
+export function Layout() {
   const [count, setCount] = React.useState(0);
   return (
+    <div>
+      <h1>This is Hcc 11 - cc</h1>
       <div>
-       <h1>This is Hcc 11 - cc</h1>
-        <div>
-          {count}
-          <button onClick={() => {
-            setCount(count + 1);}
-          }>Add count</button>
-        </div>
+        {count}
+        <button
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          Add count
+        </button>
       </div>
+    </div>
   );
 }
-
