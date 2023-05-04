@@ -10,7 +10,7 @@ import { pathToFileURL } from "url";
 import ora from "ora";
 
 const spinner = ora();
-
+console.log("-hcc-CLIENT_ENTRY_PATH-", CLIENT_ENTRY_PATH);
 export async function bundle(root: string) {
   try {
     spinner.start("-hcc-Building client + server bundles...");
